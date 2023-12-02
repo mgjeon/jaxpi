@@ -6,7 +6,7 @@ The partial differential equation is defined as
 
 $$\begin{aligned}
     & u_t - 0.0001 u_{xx} + 5 u^3 - 5 u  = 0,\quad t \in [0, 1],\ x\in[-1, 1],\\
-    &u(x,0) = x^2 \cos(\pi x),\\
+    &u(0, x) = x^2 \cos(\pi x),\\
     &u(t, -1) = u(t, 1),\\
     &u_x(t, -1) = u_x(t, 1).
 \end{aligned}$$
@@ -36,15 +36,14 @@ We present our state-of-the-art results. These are achieved by conducting a comp
 To replicate these results, use the following command:
 
 ```
-python3 main.py --config/sota.py
+python main.py --config ./configs/sota.py 
 ```
 
-After training, use the following command to get the final predicted error and visualization.
+After training, edit the following line in the configuration file to get the final predicted error and visualization.
 
 ```
-python3 main.py --config/sota.py --mode=eval
+config.mode = "eval"
 ```
-
 
 Our methods have managed to reduce the best relative $L^2$ error to
 $9.55 \times 10^{-5}$. The figure below illustrates the exact solution, our model's prediction, and the absolute error. 
