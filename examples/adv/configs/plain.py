@@ -63,7 +63,7 @@ def get_config():
     logging.log_weights = True
     logging.log_grads = True
     logging.log_ntk = True
-    logging.log_preds = False
+    logging.log_preds = True
 
     # Saving
     config.saving = saving = ml_collections.ConfigDict()

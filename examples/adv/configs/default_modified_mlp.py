@@ -12,12 +12,12 @@ def get_config():
     # Weights & Biases
     config.wandb = wandb = ml_collections.ConfigDict()
     wandb.project = "PINN-Advection"
-    wandb.name = "default"
+    wandb.name = "default_modified_mlp"
     wandb.tag = None
 
     # Arch
     config.arch = arch = ml_collections.ConfigDict()
-    arch.arch_name = "Mlp"
+    arch.arch_name = "ModifiedMlp"
     arch.num_layers = 4
     arch.hidden_dim = 256
     arch.out_dim = 1

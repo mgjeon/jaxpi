@@ -14,9 +14,9 @@ from utils import get_dataset
 
 def evaluate(config: ml_collections.ConfigDict, workdir: str):
     # Get dataset
-    T = 2.0  # final time
+    T = 1.0  # final time
     L = 2 * jnp.pi  # length of the domain
-    c = 50  # advection speed
+    c = 80  # advection speed
     n_t = 200  # number of time steps
     n_x = 128  # number of spatial points
 

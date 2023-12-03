@@ -9,7 +9,7 @@ $$\begin{aligned}
     & u(0,x) = g(x), \quad x\in(0, 2\pi)
 \end{aligned}$$
 
-For this example, we set $c=100$ and $g(x) = \sin(x)$.
+For this example, we set $c=80$ and $g(x) = \sin(x)$.
 
 
 ## Implementation Tips
@@ -61,13 +61,13 @@ This process involved finding the relative optimal combination of network archit
 To replicate these results, use the following command:
 
 ```
-python3 main.py --config/sota.py
+python main.py --config ./configs/sota.py 
 ```
 
-Once training is complete, use the following command to acquire the final predicted error and its corresponding visualization:
+After training, edit the following line in the configuration file to get the final predicted error and visualization.
 
 ```
-python3 main.py --config/sota.py --mode=eval
+config.mode = "eval"
 ```
 
 The best relative $L^2$ error is  $6.884\times 10^{-4}$. The figure below shows the exact solution, prediction, and absolute error. 

@@ -12,7 +12,7 @@ def get_config():
     # Weights & Biases
     config.wandb = wandb = ml_collections.ConfigDict()
     wandb.project = "PINN-Advection"
-    wandb.name = "default"
+    wandb.name = "plain_no_space_period"
     wandb.tag = None
 
     # Arch
@@ -22,13 +22,9 @@ def get_config():
     arch.hidden_dim = 256
     arch.out_dim = 1
     arch.activation = "tanh"
-    arch.periodicity = ml_collections.ConfigDict(
-        {"period": (2 * jnp.pi, 1.0), "axis": (0, 1), "trainable": (True, False)}
-    )
-    arch.fourier_emb = ml_collections.ConfigDict({"embed_scale": 1.0, "embed_dim": 256})
-    arch.reparam = ml_collections.ConfigDict(
-        {"type": "weight_fact", "mean": 1.0, "stddev": 0.1}
-    )
+    arch.periodicity = None
+    arch.fourier_emb = None
+    arch.reparam = None
 
     # Optim
     config.optim = optim = ml_collections.ConfigDict()
@@ -48,12 +44,12 @@ def get_config():
 
     # Weighting
     config.weighting = weighting = ml_collections.ConfigDict()
-    weighting.scheme = "grad_norm"
+    weighting.scheme = None
     weighting.init_weights = ml_collections.ConfigDict({"ics": 1.0, "res": 1.0})
     weighting.momentum = 0.9
     weighting.update_every_steps = 1000
 
-    weighting.use_causal = True
+    weighting.use_causal = False
     weighting.causal_tol = 1.0
     weighting.num_chunks = 32
 
