@@ -114,7 +114,7 @@ class AdvectionEvaluator(BaseEvaluator):
     def log_preds(self, params):
         u_pred = self.model.u_pred_fn(params, self.model.t_star, self.model.x_star)
         fig = plt.figure(figsize=(6, 5))
-        plt.imshow(u_pred.T, cmap="jet")
+        plt.imshow(u_pred.T, cmap="jet", vmin=-1, vmax=1)
         self.log_dict["u_pred"] = fig
         plt.close()
 
