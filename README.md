@@ -91,6 +91,8 @@ The config files contain a larger number of training and problem-specific config
     - Width of NN (Recommended setting: from 128 to 512)
 - config.arch.activation
     - Activation function (Recommended setting: `tanh`, `sin`, `gelu`)
+- config.arch.periodicity
+    - Imposing periodic boundary conditions: `period` = $\frac{2\pi}{P}$ for a period $P$
 - config.arch.fourier_emb
     - Random Fourier feature embeddings (Recommended setting: `embed_scale`=$\sigma \in [1, 10]$)
 - config.arch.reparam
