@@ -1,8 +1,8 @@
 import os
 
-# Deterministic
-# os.environ["XLA_FLAGS"] = "--xla_gpu_deterministic_reductions --xla_gpu_autotune_level=0"
-os.environ["TF_CUDNN_DETERMINISTIC"] = "1"  # DETERMINISTIC
+# DETERMINISTIC
+os.environ["XLA_FLAGS"] = "--xla_gpu_autotune_level=0"
+os.environ["TF_CUDNN_DETERMINISTIC"] = "1"
 
 from absl import app
 from absl import flags

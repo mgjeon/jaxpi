@@ -63,13 +63,13 @@ def get_config():
     logging.log_errors = True
     logging.log_losses = True
     logging.log_weights = True
-    logging.log_preds = False
-    logging.log_grads = False
-    logging.log_ntk = False
+    logging.log_preds = True
+    logging.log_grads = True
+    logging.log_ntk = True
 
     # Saving
     config.saving = saving = ml_collections.ConfigDict()
-    saving.save_every_steps = None
+    saving.save_every_steps = 10000
     saving.num_keep_ckpts = 10
 
     # Input shape for initializing Flax models

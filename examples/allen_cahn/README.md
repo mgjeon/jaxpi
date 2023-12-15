@@ -39,10 +39,10 @@ To replicate these results, use the following command:
 python main.py --config ./configs/sota.py 
 ```
 
-After training, edit the following line in the configuration file to get the final predicted error and visualization.
+After training, use the following command to get the final predicted error and visualization.
 
 ```
-config.mode = "eval"
+python main.py --config.mode=eval
 ```
 
 Our methods have managed to reduce the best relative $L^2$ error to
