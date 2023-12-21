@@ -94,7 +94,7 @@ The config files contain a larger number of training and problem-specific config
 - config.arch.periodicity
     - Imposing periodic boundary conditions: `period` = $\frac{2\pi}{P}$ for a period $P$
 - config.arch.fourier_emb
-    - Random Fourier feature embeddings (Recommended setting: `embed_scale`=$\sigma \in [1, 10]$)
+    - Random Fourier feature embeddings (Recommended setting: `embed_scale`= $\sigma \in [1, 10]$)
 - config.arch.reparam
     - Random weight factorization (Recommended setting: $\mu$=0.5 or 1 and $\sigma$=0.1)
 - config.training.max_steps
