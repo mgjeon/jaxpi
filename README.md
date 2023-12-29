@@ -20,9 +20,6 @@ mamba update -y mamba
 mamba install -y python=3.10 ipykernel
 pip install --upgrade pip
 mamba install -y pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
-cd ~/miniforge3/envs/jaxpi/lib
-ln -sfn libnvrtc.so.11.8.89 libnvrtc.so
-cd -
 pip install --upgrade "jax[cuda11_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 mamba install -y numpy scipy matplotlib
 pip install --upgrade flax optax absl-py wandb ml_collections tabulate
@@ -94,7 +91,7 @@ The config files contain a larger number of training and problem-specific config
 - config.arch.periodicity
     - Imposing periodic boundary conditions: `period` = $\frac{2\pi}{P}$ for a period $P$
 - config.arch.fourier_emb
-    - Random Fourier feature embeddings (Recommended setting: `embed_scale`=$\sigma \in [1, 10]$)
+    - Random Fourier feature embeddings (Recommended setting: `embed_scale`= $\sigma \in [1, 10]$)
 - config.arch.reparam
     - Random weight factorization (Recommended setting: $\mu$=0.5 or 1 and $\sigma$=0.1)
 - config.training.max_steps
