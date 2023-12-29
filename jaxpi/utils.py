@@ -31,7 +31,7 @@ def ntk_fn(apply_fn, params, *args):
     return K
 
 
-def save_checkpoint(state, workdir, keep=5, name=None):
+def save_checkpoint(state, workdir, keep=5, name=None, overwrite=False):
     # Create the workdir if it doesn't exist.
     if not os.path.isdir(workdir):
         os.makedirs(workdir)
@@ -41,7 +41,7 @@ def save_checkpoint(state, workdir, keep=5, name=None):
         # Get the first replica's state and save it.
         state = jax.device_get(tree_map(lambda x: x[0], state))
         step = int(state.step)
-        checkpoints.save_checkpoint(workdir, state, step=step, keep=keep)
+        checkpoints.save_checkpoint(workdir, state, step=step, keep=keep, overwrite=overwrite)
 
 
 def restore_checkpoint(state, workdir, step=None):

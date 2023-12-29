@@ -328,8 +328,8 @@ v_Ghia = {
 }
 
 
-def evaluate(config: ml_collections.ConfigDict, workdir: str, Re: int):
-    Re = 5000
+def evaluate(config: ml_collections.ConfigDict, workdir: str):
+    Re = 1000
     # Load dataset
     u_ref, v_ref, x_star, y_star, nu = get_dataset(Re)
 
@@ -392,7 +392,7 @@ def evaluate(config: ml_collections.ConfigDict, workdir: str, Re: int):
     plt.title("Absolute error")
     plt.tight_layout()
 
-    fig1.savefig(save_path + "ldc_u" + ".pdf", bbox_inches="tight", dpi=300)
+    fig1.savefig(save_path + "ldc_u" + ".png", bbox_inches="tight", dpi=300)
 
     # Plot the results
     fig2 = plt.figure(figsize=(18, 5))
@@ -419,7 +419,7 @@ def evaluate(config: ml_collections.ConfigDict, workdir: str, Re: int):
     plt.ylabel("y")
     plt.title("Absolute error")
     plt.tight_layout()
-    fig2.savefig(save_path + "ldc_v" + ".pdf", bbox_inches="tight", dpi=300)
+    fig2.savefig(save_path + "ldc_v" + ".png", bbox_inches="tight", dpi=300)
 
     fig3 = plt.figure(figsize=(12, 5))
     plt.subplot(1, 2, 1)
@@ -439,4 +439,4 @@ def evaluate(config: ml_collections.ConfigDict, workdir: str, Re: int):
     plt.ylabel("v(x, 0.5)")
     plt.legend()
     plt.tight_layout()
-    fig3.savefig(save_path + "ldc_Ghia" + ".pdf", bbox_inches="tight", dpi=300)
+    fig3.savefig(save_path + "ldc_Ghia" + ".png", bbox_inches="tight", dpi=300)
